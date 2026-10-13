@@ -1,0 +1,13 @@
+{
+  "name": "eco-report-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "build": "npm run build -w @eco/shared && npm run build -w @eco/api && npm run build -w @eco/web",
+    "dev:api": "npm run build -w @eco/shared && npm run dev -w @eco/api",
+    "dev:web": "npm run build -w @eco/shared && npm run dev -w @eco/web",
+    "test": "npm run test -w @eco/api && npm run test -w @eco/web"
+  },
+  "engines": {"node": ">=22"}
+}
