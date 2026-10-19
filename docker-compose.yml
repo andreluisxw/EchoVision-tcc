@@ -1,0 +1,80 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-eco}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-eco_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-eco}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+    networks:
+      appnet:
+        ipv4_address: 172.31.77.30
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGPORT: 5432
+      PGUSER: ${POSTGRES_USER:-eco}
+      PGPASSWORD: ${POSTGRES_PASSWORD:-eco_dev_password}
+      PGDATABASE: ${POSTGRES_DB:-eco}
+      PORT: 3001
+      HOST: 0.0.0.0
+      STORAGE_DIR: /app/uploads
+      IP_HASH_SECRET: ${IP_HASH_SECRET:?Defina IP_HASH_SECRET no arquivo .env}
+      ADMIN_COOKIE_SECURE: ${ADMIN_COOKIE_SECURE:-false}
+      TRUSTED_PROXIES: 172.31.77.10
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://localhost:8080}
+      MAX_POSTS_HOUR: ${MAX_POSTS_HOUR:-5}
+      MAX_POSTS_DAY: ${MAX_POSTS_DAY:-20}
+      MAX_CONFIRMS_DAY: ${MAX_CONFIRMS_DAY:-30}
+    volumes:
+      - image_data:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    # API somente na rede privada Docker. Para depuração local, habilite:
+    # ports: ["127.0.0.1:3001:3001"]
+    networks:
+      appnet:
+        ipv4_address: 172.31.77.20
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      args:
+        VITE_MAP_STYLE_URL: ${MAP_STYLE_URL:-https://tiles.openfreemap.org/styles/liberty}
+        VITE_API_BASE: ${API_BASE_URL:-/api/v1}
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    depends_on:
+      - api
+    networks:
+      appnet:
+        ipv4_address: 172.31.77.10
+
+volumes:
+  postgres_data:
+  image_data:
+
+networks:
+  appnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.31.77.0/24
