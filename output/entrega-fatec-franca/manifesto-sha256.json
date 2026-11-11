@@ -1,0 +1,134 @@
+[
+  {
+    "arquivo": "complementos/docs/adequacao-manual-ads.docx",
+    "sha256": "3d87d2f627d32689d76a5772b9681a80d92b741718d028c34f7debfb9f4a3670"
+  },
+  {
+    "arquivo": "complementos/docs/adequacao-manual-ads.pdf",
+    "sha256": "fb1749b2972d2c0bb020522c61cc5e2d40af87ae5ddfd0821ed52b60e07fbfa2"
+  },
+  {
+    "arquivo": "complementos/docs/checklist-validacao-tecnica.docx",
+    "sha256": "938964568f7adcccbe65c84508f73496cd97d52450acc13166fc3e75b4bb3432"
+  },
+  {
+    "arquivo": "complementos/docs/checklist-validacao-tecnica.pdf",
+    "sha256": "872168e600dffc2b4ad377699a63c4d8ce6b97c90de49bc4ef724a5c6f254c2b"
+  },
+  {
+    "arquivo": "complementos/docs/defesa-e-entrega.docx",
+    "sha256": "6408a65b2957008cedf15d1357a908f00f92ca7055458ef948c6d8f2938fa2b0"
+  },
+  {
+    "arquivo": "complementos/docs/defesa-e-entrega.pdf",
+    "sha256": "52250d002fca9add9fd7d13772d475be2615ccae012a6adaf8717472d8ff8fa5"
+  },
+  {
+    "arquivo": "complementos/docs/documentacao-tecnica.docx",
+    "sha256": "edb09607a814a253fd140e42028845e3da3bf250efaea61794316765a8304262"
+  },
+  {
+    "arquivo": "complementos/docs/documentacao-tecnica.pdf",
+    "sha256": "094a6f38e73f0c922a192b23969e6643bff3cd15e4f35b1da36a26ad1463721c"
+  },
+  {
+    "arquivo": "complementos/docs/etica-lgpd-e-seguranca.docx",
+    "sha256": "cf1547a7fcbb54f0b8a7c4bf40c2dfcd4b59828c53d14073f015765c24003ef0"
+  },
+  {
+    "arquivo": "complementos/docs/etica-lgpd-e-seguranca.pdf",
+    "sha256": "7f08bc41ff9424b40c28272f0f5242033bb87d24d977ee032d32845f36644799"
+  },
+  {
+    "arquivo": "complementos/docs/evidencias/entrega-ads-2026-11-11.docx",
+    "sha256": "436e260423092b9b3688a7343f55bf284f17d7c91d17573cf6248d2180b6bcb0"
+  },
+  {
+    "arquivo": "complementos/docs/evidencias/entrega-ads-2026-11-11.pdf",
+    "sha256": "0681bede17c9bf937aea5b08b69bf25a18cea493b1a06765126dff97efade375"
+  },
+  {
+    "arquivo": "complementos/docs/evidencias/painel-administrativo-2026-11-09.docx",
+    "sha256": "e3f0901f37597ec93d66e95cc1abe8166b1e13cf43814d12f5013e27ffd7a1af"
+  },
+  {
+    "arquivo": "complementos/docs/evidencias/painel-administrativo-2026-11-09.pdf",
+    "sha256": "38d4152a13cb3f559ecf570ad6fd4c7d6181a1eea6856137d37aea56ed3be3cf"
+  },
+  {
+    "arquivo": "complementos/docs/evidencias/validacao-tecnica-2026-11-09.docx",
+    "sha256": "a478ccbe9c5e3341910e72ce4ee8bca2e4c9e9411059700d86a88029480b065f"
+  },
+  {
+    "arquivo": "complementos/docs/evidencias/validacao-tecnica-2026-11-09.pdf",
+    "sha256": "91117f1a2cd48b2f07e41268c1e8b28d77e1bf2ded9558c4300832bb26902f41"
+  },
+  {
+    "arquivo": "complementos/docs/README.docx",
+    "sha256": "1cafbd13d1f17f777ff59a60cb3c25bffae7fb7c2d6500c919521c3febc016d5"
+  },
+  {
+    "arquivo": "complementos/docs/README.pdf",
+    "sha256": "7f846aa3d25b367b8145df117cb2cf59991c708cb76e989e56e5eed98e32f054"
+  },
+  {
+    "arquivo": "complementos/docs/testes-e-avaliacao.docx",
+    "sha256": "5ddddafcc15173de113ca208162969a04916947ac8aa5306ddb1cc40ffc67366"
+  },
+  {
+    "arquivo": "complementos/docs/testes-e-avaliacao.pdf",
+    "sha256": "ca6923213e4859c047ca43215b9263badf5b73b177cf50fa8d8cf94afd16ca70"
+  },
+  {
+    "arquivo": "complementos/README.docx",
+    "sha256": "da4791fb286070de42d54ed03e12b1067f36836fab4365bd72ab6f165d5e1ff3"
+  },
+  {
+    "arquivo": "complementos/README.pdf",
+    "sha256": "5a99fee47af696d1282bbd779e4502bef2321ba7fd5d8955364bdfb9b38b0554"
+  },
+  {
+    "arquivo": "formularios/termo-ric-preenchimento-parcial.docx",
+    "sha256": "f02df04a1f558005ce5eb5b169a5c7e913f489bdb304e042c81bdc73c5c1b9b3"
+  },
+  {
+    "arquivo": "formularios/termo-ric-preenchimento-parcial.pdf",
+    "sha256": "1bd4645e85a09fa3a5b2457d44a567a4895818cbe287d3109deeed09aefa4706"
+  },
+  {
+    "arquivo": "LEIA-ME-adequacao-e-submissao.pdf",
+    "sha256": "fb1749b2972d2c0bb020522c61cc5e2d40af87ae5ddfd0821ed52b60e07fbfa2"
+  },
+  {
+    "arquivo": "LEIA-ME.txt",
+    "sha256": "ce56bfe09eb0839e802458626a3df795da47d01674ffea76fcfff3678df8fba6"
+  },
+  {
+    "arquivo": "referencias-institucionais/diretrizes-tg-2023.pdf",
+    "sha256": "d7e34e96981d8d9c306683043a6ade7868d2084fe01e09fe1c8cd535cd8bd7ff"
+  },
+  {
+    "arquivo": "referencias-institucionais/instrucoes-entrega-ric.pdf",
+    "sha256": "b05d3a3039a8c77da27df7acb6a5eae6ed2f6dbffa85937aca10601568ef0988"
+  },
+  {
+    "arquivo": "referencias-institucionais/modelo-projeto-software-ads.docx",
+    "sha256": "205bf8d17c871d35d1b0ad02794d580a8593d585ee701d46a0ba062657f13f59"
+  },
+  {
+    "arquivo": "referencias-institucionais/termo-autorizacao-ric-cps.docx",
+    "sha256": "a6c70b1b2df8a942b8557dd2646471a6163b808bbe2d2dd4f502bae865140ed7"
+  },
+  {
+    "arquivo": "referencias-institucionais/termo-autorizacao-ric-cps.pdf",
+    "sha256": "30997f6ea5dc7a930c853e45de0629634d05cd5c35191156045a38988fae2693"
+  },
+  {
+    "arquivo": "tg_ads_raiz_2026.docx",
+    "sha256": "c534f249c467ae68e79d5a095ad622ab5a19def1972d4d2160a488be460d399f"
+  },
+  {
+    "arquivo": "tg_ads_raiz_2026.pdf",
+    "sha256": "8db8d7e9e4fb874f22022762380493b65946694521d239d9af296bea0c526136"
+  }
+]
