@@ -1,7 +1,7 @@
-ENTREGA ADS - RAIZ - FATEC FRANCA - 2026
+ENTREGA ADS - ECHOVISION - FATEC FRANCA - 2026
 
-Relatorio principal: tg_ads_raiz_2026.pdf (13 paginas).
-Editavel: tg_ads_raiz_2026.docx.
+Relatorio principal: tg_ads_echovision_2026.pdf (14 paginas).
+Editavel: tg_ads_echovision_2026.docx.
 Complementos: documentacao tecnica, testes, evidencias e defesa.
 Formularios: termo RIC oficial parcialmente preenchido, sem assinaturas ou escolhas de consentimento.
 Referencias institucionais: modelos e normas originais.

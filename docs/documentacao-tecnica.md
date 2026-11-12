@@ -1,8 +1,8 @@
-# Documentação técnica da plataforma Raiz
+# Documentação técnica da plataforma EchoVision
 
 ## 1 Finalidade e escopo
 
-Este documento descreve o estado técnico do MVP Raiz usado no TCC de Análise e Desenvolvimento de Sistemas. Ele diferencia o que está implementado, o que existe parcialmente e o que permanece planejado. A fonte de verdade é o código do repositório na versão submetida à avaliação.
+Este documento descreve o estado técnico do MVP EchoVision usado no TCC de Análise e Desenvolvimento de Sistemas. Ele diferencia o que está implementado, o que existe parcialmente e o que permanece planejado. A fonte de verdade é o código do repositório na versão submetida à avaliação.
 
 O sistema apoia estes objetivos específicos do TCC:
 

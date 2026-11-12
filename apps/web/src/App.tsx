@@ -197,7 +197,7 @@ export default function App() {
     <aside className={`sidebar ${mobileMenu ? 'menu-open' : ''} ${page === 'report' ? 'report-active' : ''} ${pickMode && page === 'report' ? 'picking' : ''}`}>
       <div className="brandbar">
         <div className="brand-mark"><Leaf size={22} strokeWidth={2.4} /></div>
-        <div className="brand-copy"><div className="brand-title">raiz<span>.</span></div><div className="brand-subtitle">MAPA AMBIENTAL COLABORATIVO</div></div>
+        <div className="brand-copy"><div className="brand-title">EchoVision<span>.</span></div><div className="brand-subtitle">MAPA AMBIENTAL COLABORATIVO</div></div>
         <button className="icon-button mobile-close" onClick={() => setMobileMenu(false)} aria-label="Fechar menu"><X size={20}/></button>
       </div>
       <div className="sidebar-content">

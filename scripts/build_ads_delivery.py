@@ -191,7 +191,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--pages');args=parser.parse_args()
     pages=json.loads(Path(args.pages).read_text(encoding='utf-8')) if args.pages else None
     doc=base_from_template();parse_body(doc,MAIN.read_text(encoding='utf-8'),True,pages)
-    path=OUT/'tg_ads_raiz_2026.docx';doc.save(path)
+    path=OUT/'tg_ads_echovision_2026.docx';doc.save(path)
     refhash=hashlib.sha256(REF.read_bytes()).hexdigest()
     (ROOT/'tmp/entrega/template-inventory.json').write_text(json.dumps({'sha256':refhash,'parts':{n:hashlib.sha256(b).hexdigest() for n,b in ((n,ZipFile(REF).read(n)) for n in ZipFile(REF).namelist())}},indent=2),encoding='utf-8')
     # Supplemental records remain separate from the academic narrative.

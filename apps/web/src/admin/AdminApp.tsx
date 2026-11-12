@@ -330,7 +330,7 @@ export default function AdminApp() {
         </a>
         <form onSubmit={login}>
           <div className="admin-logo">
-            <Leaf /> raiz.
+            <Leaf /> EchoVision.
           </div>
           <small>ÁREA ADMINISTRATIVA</small>
           <h1>Entrar no painel</h1>
@@ -364,7 +364,7 @@ export default function AdminApp() {
       <main className="admin-login">
         <form onSubmit={changePassword}>
           <div className="admin-logo">
-            <Leaf /> raiz.
+            <Leaf /> EchoVision.
           </div>
           <h1>Defina sua senha</h1>
           <p>
@@ -426,7 +426,7 @@ export default function AdminApp() {
       <aside className="admin-sidebar">
         <a className="admin-logo" href="/">
           {" "}
-          <Leaf /> raiz.
+          <Leaf /> EchoVision.
         </a>
         <small>ADMINISTRAÇÃO</small>
         <nav aria-label="Administração">

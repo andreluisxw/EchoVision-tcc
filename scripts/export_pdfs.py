@@ -99,7 +99,7 @@ def word_story(path):
 
 def footer(canvas,doc):
     canvas.saveState();canvas.setFont('Body',8);canvas.setFillColor(colors.HexColor('#67736b'))
-    canvas.drawString(56,30,'Raiz | Documentação do projeto')
+    canvas.drawString(56,30,'EchoVision | Documentação do projeto')
     canvas.drawRightString(539,30,str(doc.page));canvas.restoreState()
 
 def main():
@@ -109,12 +109,12 @@ def main():
     for source in sources:
         target=OUT/source.relative_to(ROOT).with_suffix('.pdf');target.parent.mkdir(parents=True,exist_ok=True)
         story=word_story(source) if source.suffix=='.docx' else markdown_story(source.read_text(encoding='utf-8-sig'))
-        SimpleDocTemplate(str(target),pagesize=(595.28,841.89),leftMargin=56,rightMargin=56,topMargin=52,bottomMargin=52,title=source.stem,author='Projeto Raiz').build(story,onFirstPage=footer,onLaterPages=footer)
+        SimpleDocTemplate(str(target),pagesize=(595.28,841.89),leftMargin=56,rightMargin=56,topMargin=52,bottomMargin=52,title=source.stem,author='Projeto EchoVision').build(story,onFirstPage=footer,onLaterPages=footer)
         reader=PdfReader(target)
         if not reader.pages or not any(p.extract_text().strip() for p in reader.pages):raise RuntimeError(f'PDF vazio: {target}')
         manifest.append((target,len(reader.pages)))
         print(f'{target.relative_to(OUT)}: {len(reader.pages)} páginas')
-    with ZipFile(OUT/'documentacao-raiz-pdfs.zip','w',ZIP_DEFLATED) as archive:
+    with ZipFile(OUT/'documentacao-echovision-pdfs.zip','w',ZIP_DEFLATED) as archive:
         for path,_ in manifest:archive.write(path,path.relative_to(OUT))
     print(f'TOTAL: {len(manifest)} PDFs, {sum(pages for _,pages in manifest)} páginas')
 

@@ -2,13 +2,13 @@
 
 ## Resumo
 
-Ocorrências ambientais registradas em canais dispersos dificultam a consulta espacial e o acompanhamento de problemas locais. Este trabalho apresenta o desenvolvimento da plataforma Raiz, uma aplicação web que permite registrar relatos sem cadastro público, consultar ocorrências em mapa e confirmar problemas existentes. O objetivo foi construir e verificar um protótipo com organização geográfica, prevenção básica de abuso e moderação rastreável. O método combinou análise documental, inspeção do código, refinamento de requisitos, implementação incremental e testes técnicos com dados fictícios. A solução utiliza interface por componentes, interface de programação de aplicações, banco geoespacial, processamento de imagens e contas administrativas individuais. A distinção entre ocorrência e relato permite agregar observações sem confundir repetição com verificação oficial. Ações de moderação são reversíveis, exigem justificativa e preservam histórico. Na execução final, oito testes de servidor e nove de componentes foram aprovados. A compilação e a demonstração autenticada também foram verificadas. Os resultados sustentam os cenários técnicos documentados, mas não comprovam impacto ambiental, desempenho em escala ou prontidão para operação pública. O produto entregue inclui código, requisitos, modelos, documentação de implantação e evidências de avaliação.
+Ocorrências ambientais registradas em canais dispersos dificultam a consulta espacial e o acompanhamento de problemas locais. Este trabalho apresenta o desenvolvimento da plataforma EchoVision, uma aplicação web que permite registrar relatos sem cadastro público, consultar ocorrências em mapa e confirmar problemas existentes. O objetivo foi construir e verificar um protótipo com organização geográfica, prevenção básica de abuso e moderação rastreável. O método combinou análise documental, inspeção do código, refinamento de requisitos, implementação incremental e testes técnicos com dados fictícios. A solução utiliza interface por componentes, interface de programação de aplicações, banco geoespacial, processamento de imagens e contas administrativas individuais. A distinção entre ocorrência e relato permite agregar observações sem confundir repetição com verificação oficial. Ações de moderação são reversíveis, exigem justificativa e preservam histórico. Na execução final, oito testes de servidor e nove de componentes foram aprovados. A compilação e a demonstração autenticada também foram verificadas. Os resultados sustentam os cenários técnicos documentados, mas não comprovam impacto ambiental, desempenho em escala ou prontidão para operação pública. O produto entregue inclui código, requisitos, modelos, documentação de implantação e evidências de avaliação.
 
 **Palavras-chave:** Aplicação web. Informação geográfica. Ocorrências ambientais. Qualidade de software. Sistemas colaborativos.
 
 ## Abstract
 
-Environmental reports distributed across separate channels make spatial consultation and local issue tracking difficult. This work presents Raiz, a web application for public reporting without registration, map consultation, and confirmation of existing issues. The objective was to build and verify a prototype combining geographic organization, basic abuse prevention, and traceable moderation. The method combined document analysis, source-code inspection, requirements refinement, incremental implementation, and technical testing with fictitious data. The solution uses a component-based interface, an application programming interface, a spatial database, image processing, and individual administrative accounts. Separating issues from reports allows observations to be aggregated without treating repetition as official verification. Moderation actions are reversible, require a reason, and preserve history. In the final execution, eight server tests and nine component tests passed. Compilation and an authenticated demonstration were also verified. The results support the documented technical scenarios but do not establish environmental impact, performance at scale, or readiness for unrestricted public operation. Deliverables include source code, requirements, models, deployment documentation, and evaluation evidence.
+Environmental reports distributed across separate channels make spatial consultation and local issue tracking difficult. This work presents EchoVision, a web application for public reporting without registration, map consultation, and confirmation of existing issues. The objective was to build and verify a prototype combining geographic organization, basic abuse prevention, and traceable moderation. The method combined document analysis, source-code inspection, requirements refinement, incremental implementation, and technical testing with fictitious data. The solution uses a component-based interface, an application programming interface, a spatial database, image processing, and individual administrative accounts. Separating issues from reports allows observations to be aggregated without treating repetition as official verification. Moderation actions are reversible, require a reason, and preserve history. In the final execution, eight server tests and nine component tests passed. Compilation and an authenticated demonstration were also verified. The results support the documented technical scenarios but do not establish environmental impact, performance at scale, or readiness for unrestricted public operation. Deliverables include source code, requirements, models, deployment documentation, and evaluation evidence.
 
 **Keywords:** Collaborative systems. Environmental occurrences. Geographic information. Software quality. Web application.
 
@@ -28,7 +28,7 @@ O projeto partiu de um pacote funcional recebido, inspecionado e ampliado. O his
 
 O termo de abertura consolida objetivo, entregáveis, fronteiras e responsabilidades. Seu papel é tornar o escopo verificável, em consonância com a organização do projeto e da relatoria descrita nas diretrizes da Fatec Franca (2023). O Quadro 1 registra o projeto apresentado; não representa aprovação institucional retroativa.
 
-Quadro 1 - Termo de abertura do projeto Raiz
+Quadro 1 - Termo de abertura do projeto EchoVision
 
 | Campo | Definição |
 |---|---|
@@ -137,7 +137,7 @@ Casos de uso descrevem interações que atendem objetivos dos atores (OMG, 2017)
 
 Figura 2 - Diagrama de casos de uso
 
-![Casos de uso do Raiz](assets/entrega/casos-uso.png)
+![Casos de uso do EchoVision](assets/entrega/casos-uso.png)
 
 Fonte: elaboração dos autores (2026), com notação baseada em OMG (2017).
 

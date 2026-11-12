@@ -1,4 +1,4 @@
-# Documentação do TCC Raiz
+# Documentação do TCC EchoVision
 
 ## Entrega conforme modelo de ADS da Fatec Franca
 
@@ -8,7 +8,7 @@ O relatório contém TAP, BPMN, requisitos, regras, casos de uso, modelo de dado
 
 Os documentos não atribuem aprovação, nota ou consentimento aos autores e à instituição. Assinaturas e escolhas no termo RIC/CPS, dados pessoais exigidos no formulário e confirmação de nome/prazo do depósito permanecem externos ao pacote técnico.
 
-Este diretório reúne o pacote acadêmico e técnico do Trabalho de Conclusão de Curso de Tecnologia em Análise e Desenvolvimento de Sistemas sobre a plataforma Raiz, um sistema web colaborativo para registro e consulta de ocorrências ambientais.
+Este diretório reúne o pacote acadêmico e técnico do Trabalho de Conclusão de Curso de Tecnologia em Análise e Desenvolvimento de Sistemas sobre a plataforma EchoVision, um sistema web colaborativo para registro e consulta de ocorrências ambientais.
 
 ## Estado do pacote
 

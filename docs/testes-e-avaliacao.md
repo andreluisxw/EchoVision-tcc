@@ -2,7 +2,7 @@
 
 ## 1 Finalidade
 
-Este documento define como verificar o MVP Raiz e sustentar os objetivos técnicos do TCC. Resultados não realizados permanecem marcados como `EXECUTAR`; os critérios não devem ser alterados depois da execução para favorecer o resultado.
+Este documento define como verificar o MVP EchoVision e sustentar os objetivos técnicos do TCC. Resultados não realizados permanecem marcados como `EXECUTAR`; os critérios não devem ser alterados depois da execução para favorecer o resultado.
 
 ## 2 Ambientes
 

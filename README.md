@@ -1,7 +1,7 @@
-# Raiz — MVP de ocorrências ambientais
+# EchoVision — MVP de ocorrências ambientais
 
 
-Web app colaborativo para localizar e reportar problemas ambientais. **“Raiz” é apenas um nome/identidade visual provisório**, facilmente alterável. **Frontend React e backend Fastify são projetos independentes**, comunicando-se apenas por HTTP/REST; compartilham tipos TypeScript, não regras de infraestrutura.
+Web app colaborativo para localizar e reportar problemas ambientais. **EchoVision** é a identidade do produto. **Frontend React e backend Fastify são projetos independentes**, comunicando-se apenas por HTTP/REST; compartilham tipos TypeScript, não regras de infraestrutura.
 
 > Status: MVP para desenvolvimento e piloto controlado. **Não é uma plataforma pronta para lançamento público sem revisão de segurança, termos, política de privacidade, operação de moderação e testes em ambiente real.**
 

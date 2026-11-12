@@ -2,7 +2,7 @@
 
 ## 1 Finalidade
 
-Este documento organiza a defesa do Projeto de Software de ADS sobre a plataforma Raiz, estruturado no modelo oficial da Fatec Franca. O roteiro de apresentação deve ser ajustado ao tempo confirmado pela banca. Resultados marcados como `EXECUTAR` não podem ser apresentados como concluídos.
+Este documento organiza a defesa do Projeto de Software de ADS sobre a plataforma EchoVision, estruturado no modelo oficial da Fatec Franca. O roteiro de apresentação deve ser ajustado ao tempo confirmado pela banca. Resultados marcados como `EXECUTAR` não podem ser apresentados como concluídos.
 
 ## 2 Mensagem central
 

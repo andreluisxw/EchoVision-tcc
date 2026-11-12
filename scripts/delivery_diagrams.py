@@ -53,7 +53,7 @@ def actor(d,x,y,label):
     for a,b in [((x-35,y-5),(x+35,y-5)),((x,y+30),(x-30,y+70)),((x,y+30),(x+30,y+70))]:d.line([a,b],fill='#334e3c',width=3)
     text(d,x,y+80,label,24)
 def usecases():
-    im,d=start(1600,850);d.rectangle((275,65,1320,750),outline='#334e3c',width=3);text(d,790,85,'Sistema Raiz',30)
+    im,d=start(1600,850);d.rectangle((275,65,1320,750),outline='#334e3c',width=3);text(d,790,85,'Sistema EchoVision',30)
     actor(d,125,235,'Visitante');actor(d,125,575,'Colaborador');actor(d,1460,235,'Moderador');actor(d,1460,575,'Proprietário')
     labels=[(560,235,'UC-01 Consultar mapa'),(560,430,'UC-02 Publicar relato'),(560,625,'UC-03 Confirmar'),(1050,235,'UC-04 Autenticar'),(1050,430,'UC-05 Moderar / histórico'),(1050,625,'UC-06 Gerenciar contas')]
     for x,y,label in labels:d.ellipse((x-235,y-65,x+235,y+65),fill='#f4f7f4',outline='#334e3c',width=3);text(d,x,y-15,label,24)

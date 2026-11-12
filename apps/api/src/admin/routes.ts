@@ -29,7 +29,7 @@ const fail = (statusCode: number, message: string) => {
 };
 const id = (value: unknown) => z.string().uuid().parse(value);
 const reason = z.string().trim().min(3).max(1000);
-const cookieName = "raiz_admin";
+const cookieName = "echovision_admin";
 const token = (req: FastifyRequest) =>
   (req.headers.cookie || "")
     .split(";")

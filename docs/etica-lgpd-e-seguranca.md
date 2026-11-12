@@ -2,7 +2,7 @@
 
 ## 1 Finalidade
 
-Este documento orienta o tratamento responsável de dados no MVP Raiz. Ele não constitui parecer jurídico nem declaração de conformidade. Base legal, prazos, papéis e procedimentos institucionais devem ser confirmados antes de uma operação pública.
+Este documento orienta o tratamento responsável de dados no MVP EchoVision. Ele não constitui parecer jurídico nem declaração de conformidade. Base legal, prazos, papéis e procedimentos institucionais devem ser confirmados antes de uma operação pública.
 
 ## 2 Escopo de dados
 
