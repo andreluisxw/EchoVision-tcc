@@ -1,6 +1,6 @@
 ENTREGA ADS - ECHOVISION - FATEC FRANCA - 2026
 
-Relatorio principal: tg_ads_echovision_2026.pdf (14 paginas).
+Relatorio principal: tg_ads_echovision_2026.pdf (26 paginas).
 Editavel: tg_ads_echovision_2026.docx.
 Complementos: documentacao tecnica, testes, evidencias e defesa.
 Formularios: termo RIC oficial parcialmente preenchido, sem assinaturas ou escolhas de consentimento.

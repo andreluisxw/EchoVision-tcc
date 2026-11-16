@@ -2,31 +2,31 @@
 
 ## Resumo
 
-Ocorrências ambientais registradas em canais dispersos dificultam a consulta espacial e o acompanhamento de problemas locais. Este trabalho apresenta o desenvolvimento da plataforma EchoVision, uma aplicação web que permite registrar relatos sem cadastro público, consultar ocorrências em mapa e confirmar problemas existentes. O objetivo foi construir e verificar um protótipo com organização geográfica, prevenção básica de abuso e moderação rastreável. O método combinou análise documental, inspeção do código, refinamento de requisitos, implementação incremental e testes técnicos com dados fictícios. A solução utiliza interface por componentes, interface de programação de aplicações, banco geoespacial, processamento de imagens e contas administrativas individuais. A distinção entre ocorrência e relato permite agregar observações sem confundir repetição com verificação oficial. Ações de moderação são reversíveis, exigem justificativa e preservam histórico. Na execução final, oito testes de servidor e nove de componentes foram aprovados. A compilação e a demonstração autenticada também foram verificadas. Os resultados sustentam os cenários técnicos documentados, mas não comprovam impacto ambiental, desempenho em escala ou prontidão para operação pública. O produto entregue inclui código, requisitos, modelos, documentação de implantação e evidências de avaliação.
+Este trabalho aborda a organização de relatos ambientais para consulta espacial e acompanhamento de problemas locais. Apresenta o desenvolvimento da plataforma EchoVision, uma aplicação web que permite registrar relatos sem cadastro público, consultar ocorrências em mapa e confirmar problemas existentes. O objetivo foi construir e verificar um protótipo com organização geográfica, prevenção básica de abuso e moderação rastreável. O método combinou análise documental, inspeção do código, refinamento de requisitos, implementação incremental e testes técnicos com dados fictícios. A solução utiliza interface por componentes, interface de programação de aplicações, banco geoespacial, processamento de imagens e contas administrativas individuais. A distinção entre ocorrência e relato permite agregar observações sem confundir repetição com verificação oficial. Ações de moderação são reversíveis, exigem justificativa e preservam histórico. Na execução final, oito testes de servidor e nove de componentes foram aprovados. A compilação e a demonstração autenticada também foram verificadas. Os resultados sustentam os cenários técnicos documentados, mas não comprovam impacto ambiental, desempenho em escala ou prontidão para operação pública. O produto entregue inclui código, requisitos, modelos, documentação de implantação e evidências de avaliação.
 
 **Palavras-chave:** Aplicação web. Informação geográfica. Ocorrências ambientais. Qualidade de software. Sistemas colaborativos.
 
 ## Abstract
 
-Environmental reports distributed across separate channels make spatial consultation and local issue tracking difficult. This work presents EchoVision, a web application for public reporting without registration, map consultation, and confirmation of existing issues. The objective was to build and verify a prototype combining geographic organization, basic abuse prevention, and traceable moderation. The method combined document analysis, source-code inspection, requirements refinement, incremental implementation, and technical testing with fictitious data. The solution uses a component-based interface, an application programming interface, a spatial database, image processing, and individual administrative accounts. Separating issues from reports allows observations to be aggregated without treating repetition as official verification. Moderation actions are reversible, require a reason, and preserve history. In the final execution, eight server tests and nine component tests passed. Compilation and an authenticated demonstration were also verified. The results support the documented technical scenarios but do not establish environmental impact, performance at scale, or readiness for unrestricted public operation. Deliverables include source code, requirements, models, deployment documentation, and evaluation evidence.
+This work addresses the organization of environmental reports for spatial consultation and local issue tracking. It presents EchoVision, a web application for public reporting without registration, map consultation, and confirmation of existing issues. The objective was to build and verify a prototype combining geographic organization, basic abuse prevention, and traceable moderation. The method combined document analysis, source-code inspection, requirements refinement, incremental implementation, and technical testing with fictitious data. The solution uses a component-based interface, an application programming interface, a spatial database, image processing, and individual administrative accounts. Separating issues from reports allows observations to be aggregated without treating repetition as official verification. Moderation actions are reversible, require a reason, and preserve history. In the final execution, eight server tests and nine component tests passed. Compilation and an authenticated demonstration were also verified. The results support the documented technical scenarios but do not establish environmental impact, performance at scale, or readiness for unrestricted public operation. Deliverables include source code, requirements, models, deployment documentation, and evaluation evidence.
 
 **Keywords:** Collaborative systems. Environmental occurrences. Geographic information. Software quality. Web application.
 
 ## 1 Introdução
 
-Problemas como descarte irregular, esgoto e queimadas podem ser percebidos por pessoas próximas antes de serem consolidados em uma base de consulta. Quando as observações permanecem em mensagens e publicações isoladas, torna-se difícil localizar recorrências e acompanhar seu estado. O problema tratado é a organização dessas contribuições, sem presumir que todo relato corresponda a um fato oficialmente comprovado.
+Goodchild (2007) descreve a produção e a circulação de informação geográfica fornecida voluntariamente por cidadãos e discute questões de precisão e privacidade. Essa perspectiva fundamenta a proposta de organizar contribuições ambientais em uma aplicação geográfica. Neste projeto, a dispersão de relatos constitui uma hipótese de problema que orientou o desenvolvimento, sem diagnóstico empírico de uma comunidade específica.
 
 A questão de projeto foi: como implementar uma aplicação colaborativa para registrar, consolidar e consultar ocorrências ambientais sem cadastro público obrigatório, mantendo controles básicos de qualidade, privacidade e prevenção de abuso? A proposição foi separar o problema observado de suas contribuições, sugerir ocorrências próximas e manter confiança, ciclo de vida e visibilidade independentes.
 
 O objetivo geral foi desenvolver e verificar tecnicamente um protótipo web de registro e consulta geográfica de ocorrências ambientais. Os objetivos específicos foram modelar requisitos e regras; implementar consulta, registro e confirmação; introduzir privacidade e moderação; verificar fluxos locais; e analisar limitações para evolução operacional.
 
-O tema reúne desafios de Análise e Desenvolvimento de Sistemas: requisitos, dados geoespaciais, interface responsiva, programação de servidor, segurança e testes. A contribuição simplificada exige limites transparentes: redes compartilhadas e serviços de intermediação impedem tratar endereço de rede como identidade pessoal. Repetição não certifica veracidade, e fotografias podem conter conteúdo sensível.
+O tema articula a especificação de requisitos verificáveis, recomendada pela NASA (2016), e a avaliação de um artefato de software, discutida por Hevner et al. (2004). O compartilhamento de endereços IP limita a atribuição de uma ação a um indivíduo, conforme Ford et al. (2011, seções 12 e 13). Goodchild (2007) também aponta questões de precisão e privacidade da informação geográfica voluntária. Por isso, o projeto diferencia repetição de relatos, verificação administrativa e comprovação oficial.
 
-O projeto partiu de um pacote funcional recebido, inspecionado e ampliado. O histórico Git foi reorganizado retrospectivamente; suas datas não comprovam atividades. A avaliação utilizou análise documental e testes fictícios, sem entrevistas ou pesquisa de campo. O relatório segue a modalidade Projeto de Software de ADS da Fatec Franca (2023), apresentando requisitos, métodos, desenvolvimento e resultados.
+O projeto partiu de um pacote funcional recebido, inspecionado e ampliado. O histórico Git foi reorganizado retrospectivamente; suas datas não comprovam atividades. A avaliação utilizou análise documental e testes fictícios, sem entrevistas ou pesquisa de campo. O relatório segue a modalidade Projeto de Software de ADS da Fatec Franca (2023b), apresentando requisitos, métodos, desenvolvimento e resultados.
 
 ### 1.1 Termo de abertura do projeto
 
-O termo de abertura consolida objetivo, entregáveis, fronteiras e responsabilidades. Seu papel é tornar o escopo verificável, em consonância com a organização do projeto e da relatoria descrita nas diretrizes da Fatec Franca (2023). O Quadro 1 registra o projeto apresentado; não representa aprovação institucional retroativa.
+O termo de abertura consolida objetivo, entregáveis, fronteiras e responsabilidades. Seu papel é tornar o escopo verificável, em consonância com a organização do projeto e da relatoria descrita nas diretrizes da Fatec Franca (2023a). O Quadro 1 registra o projeto apresentado; não representa aprovação institucional retroativa.
 
 Quadro 1 - Termo de abertura do projeto EchoVision
 
@@ -88,7 +88,7 @@ Quadro 2 - Requisitos funcionais
 | RF-15 | Auditar autor, alvo, ação, antes/depois e instante | Alta | Implementado |
 | RF-16 | Exibir resolvidas opcionalmente por até 90 dias | Média | Implementado |
 
-Fonte: elaboração dos autores (2026), a partir dos contratos implementados.
+Fonte: elaboração dos autores (2026), com base nos contratos e nas rotas da API.
 
 ### 2.4 Requisitos não funcionais
 
@@ -184,7 +184,7 @@ Figura 3 - Entidades e relacionamentos
 
 ![Modelo de dados](assets/entrega/dados.png)
 
-Fonte: elaboração dos autores (2026), a partir do schema SQL.
+Fonte: elaboração dos autores (2026), com base no schema e na migração administrativa.
 
 O Quadro 8 permite localizar requisitos e regras envolvidos em cada operação. A migração administrativa é versionada; resolved_at em resolvidas legadas usa a data do último relato como aproximação, sem fabricar autoria histórica.
 
@@ -206,7 +206,7 @@ Fonte: elaboração dos autores (2026).
 
 ### 3.1 Tecnologias
 
-O Quadro 9 informa as famílias de versões declaradas no projeto. Versões pontuais estão no lockfile e nas evidências. Licenças de componentes não significam autorização irrestrita para redistribuir todo o conjunto; Docker Desktop deve ser analisado separadamente do Docker Engine.
+O Quadro 9 apresenta as famílias de versões e as licenças dos componentes utilizados. O levantamento foi realizado a partir dos manifests, do lockfile e das informações oficiais dos componentes. A identificação das licenças descreve a composição técnica do protótipo; condições de contratação e redistribuição exigem análise específica para uma operação futura.
 
 Quadro 9 - Tecnologias e finalidade
 
@@ -226,15 +226,15 @@ Quadro 9 - Tecnologias e finalidade
 | Nginx 1.27 | BSD-2-Clause | Proxy e estáticos; nginx.org |
 | Docker Compose | Apache-2.0 | Orquestração; docs.docker.com/compose |
 
-Fonte: manifests, lockfile e licenças dos projetos oficiais (2026).
+Fonte: levantamento dos autores (2026), a partir dos manifests, do lockfile e das licenças dos componentes indicados.
 
-React permite compor telas a partir de unidades reutilizáveis (React, s.d.). Fastify organiza rotas e extensões no servidor (Fastify, s.d.). PostgreSQL e PostGIS concentram persistência transacional e consulta geográfica. A tipagem compartilhada reduz divergências entre resposta da API e consumo pela interface. O projeto utiliza recursos nativos do Node para scrypt, tokens e HMAC.
+React permite compor interfaces por componentes (React, s.d.), enquanto Fastify organiza rotas e extensões no servidor (Fastify, s.d.). Transações e consulta espacial são descritas nas documentações de PostgreSQL (s.d.) e PostGIS (s.d.). TypeScript verifica propriedades e compatibilidade de tipos antes da execução, sem substituir validação em tempo de execução (TypeScript, s.d.). No projeto, os contratos compartilhados e a validação Zod concretizam essa separação; scrypt, tokens e HMAC utilizam o módulo crypto do Node.js (Node.js, s.d.).
 
 ### 3.2 Execução e verificação
 
-O pacote inicial foi revisado contra design e README. O refinamento definiu contas individuais, ações reversíveis e auditoria. A implementação evoluiu por migração, autenticação, contas, moderação e interface. Frontend fica em apps/web; API em apps/api; contratos em packages/shared; infraestrutura em infra. A origem recebida e a reconstrução do histórico são declaradas, sem simular meses de desenvolvimento autoral.
+O desenvolvimento partiu da análise do pacote funcional recebido e de sua documentação. O refinamento definiu contas individuais, ações reversíveis e auditoria. A implementação foi organizada em migração do banco, autenticação, gestão de contas, moderação e interface. O frontend está em apps/web; a API, em apps/api; os contratos compartilhados, em packages/shared; e a infraestrutura, em infra.
 
-Foram combinados testes unitários, integração com banco real, testes de componentes e inspeção no navegador. A API usou banco separado eco_admin_test. Testes de componentes simulam respostas HTTP e não substituem navegador real. O recorte utiliza construção e avaliação de artefato como referência metodológica (Hevner et al., 2004), sem afirmar pesquisa empírica com participantes.
+A avaliação combinou testes unitários, integração com banco real, testes de componentes e inspeção no navegador. A API utilizou o banco isolado eco_admin_test; os componentes utilizaram respostas HTTP simuladas. Os resultados, ambientes e limitações estão registrados em docs/evidencias/validacao-tecnica-2026-11-09.md, docs/evidencias/painel-administrativo-2026-11-09.md e docs/evidencias/entrega-ads-2026-11-11.md. Esses registros integram a documentação complementar e permitem conferir os resultados da Seção 5. A construção e a avaliação do artefato adotam Hevner et al. (2004) como referência metodológica. Não houve avaliação empírica com participantes.
 
 ## 4 Desenvolvimento
 
@@ -248,7 +248,7 @@ Figura 4 - Arquitetura de execução
 
 Fonte: elaboração dos autores (2026).
 
-Criação, confirmação e moderação usam transações. O Trecho 1 adapta o módulo de banco: uma falha antes do commit desfaz a unidade de trabalho. A auditoria deve usar o mesmo cliente da mudança de estado.
+Transações agrupam operações em uma unidade atômica; BEGIN, COMMIT e ROLLBACK delimitam sua conclusão ou reversão (PostgreSQL, s.d.). No projeto, criação, confirmação e moderação utilizam esse mecanismo, com a auditoria executada pelo mesmo cliente da mudança de estado. O Trecho 1 adapta o módulo de banco utilizado na implementação.
 
 Trecho 1 - Unidade de trabalho transacional
 
@@ -264,13 +264,13 @@ try {
 }
 ```
 
-Fonte: adaptação de apps/api/src/db.ts (2026).
+Fonte: adaptação do código do projeto, módulo apps/api/src/db.ts (2026).
 
 O módulo libera a conexão em finally. A confirmação e a mudança administrativa bloqueiam a ocorrência para evitar atualização concorrente inconsistente. O histórico é append-only pela aplicação e por trigger; essa proteção não limita um superusuário do banco, cujo acesso deve ser restrito.
 
 ### 4.2 Consulta e contribuição
 
-A Figura 5 mostra o mapa público. A lista oferece alternativa de seleção aos pontos. Cluster representa agrupamento visual por zoom, não fusão de ocorrências. O tamanho utiliza quantidade acumulada de relatos, não número de pessoas ou total dos últimos trinta dias.
+A Figura 5 apresenta o mapa público e a lista de ocorrências implementados. O agrupamento de pontos por nível de zoom utiliza recursos do MapLibre (s.d.). No EchoVision, esse agrupamento é apenas visual: não mescla registros no banco. O tamanho dos marcadores representa a quantidade acumulada de relatos de cada ocorrência, conforme a regra do projeto, e não uma contagem de pessoas.
 
 Figura 5 - Mapa público com dados fictícios
 
@@ -278,7 +278,7 @@ Figura 5 - Mapa público com dados fictícios
 
 Fonte: captura da aplicação (11 nov. 2026); atribuição cartográfica mantida.
 
-Na Figura 6, categoria e localização são obrigatórias; descrição e foto são opcionais. O registro pode usar seleção manual ou geolocalização, não utilizada para obter localização pessoal nas capturas. Fotografias são decodificadas e regravadas em JPEG com remoção de metadados. Esse processamento não detecta conteúdo ilícito, rostos ou placas (OWASP Foundation, s.d.).
+No formulário da Figura 6, categoria e localização são obrigatórias; descrição e foto são opcionais. O registro aceita seleção manual ou geolocalização. As capturas foram realizadas com dados fictícios e sem coleta de localização pessoal. O módulo media.ts decodifica as fotografias e as regrava em JPEG, descartando os metadados originais. Não foram implementadas análise semântica de conteúdo nem detecção de rostos e placas. A OWASP Foundation (s.d.a) recomenda controles de upload em camadas, incluindo validação e proteção do armazenamento; o reprocessamento adotado representa apenas parte desses controles.
 
 Figura 6 - Formulário de relato
 
@@ -298,7 +298,7 @@ Figura 7 - Fila administrativa
 
 Fonte: captura da aplicação (11 nov. 2026), com conta fictícia.
 
-Senhas usam scrypt com salt aleatório; só o hash do token de sessão é persistido. Cookies são HttpOnly/SameSite=Strict, com Secure fora do local. A API valida origem nas mutações. Troca ou redefinição de senha e desativação revogam sessões. HTTPS, MFA conforme risco e revisão especializada continuam necessários em eventual operação pública.
+A autenticação implementada utiliza scrypt com salt aleatório e armazena somente o hash dos tokens de sessão. Os cookies usam HttpOnly e SameSite=Strict, com Secure exigido fora das origens locais. A troca ou redefinição de senha e a desativação de conta revogam as sessões. Essas regras estão implementadas nos módulos passwords.ts e admin/routes.ts. A recomendação de proteger o transporte e controlar o ciclo de vida das sessões é fundamentada pela OWASP Foundation (s.d.b). MFA e revisão especializada permanecem propostas de evolução; os ensaios realizados não constituem uma auditoria integral de segurança.
 
 A Figura 8 mostra relatos e histórico. Resolver preserva relatos e acrescenta data; reabrir limpa somente a resolução corrente. Verificar e ocultar são dimensões independentes. Cada evento registra autor, alvo, antes/depois, motivo e instante. O painel recebe agregados de fontes, sem IP ou HMAC, e oferece prévia do mapa nas coordenadas.
 
@@ -314,7 +314,7 @@ A minimização e o acesso restrito são medidas técnicas; não se declara conf
 
 ### 5.1 Análise de portabilidade
 
-O Quadro 10 diferencia ambiente executado de compatibilidade esperada. Containers e tecnologia web não comprovam execução em qualquer host ou navegador.
+O Quadro 10 sintetiza os ambientes e as condições observados na avaliação. A coluna de resultado distingue execução verificada de compatibilidade ainda não ensaiada.
 
 Quadro 10 - Portabilidade
 
@@ -328,11 +328,11 @@ Quadro 10 - Portabilidade
 | Mapas externos | Internet e tiles disponíveis | Dependência externa com mensagem de falha |
 | Quotas e mídia | Uma instância/volumes | Não distribuídos; requerem evolução para escala horizontal |
 
-Fonte: elaboração dos autores (2026).
+Fonte: registros de avaliação técnica do projeto, em docs/evidencias/ (9 e 11 nov. 2026).
 
 ### 5.2 Métricas e cálculos
 
-O Quadro 11 apresenta denominadores explícitos. Quantidade de casos não é cobertura de linhas; quantidade de requisitos implementados não significa aprovação individual de todos eles.
+O Quadro 11 reúne os resultados dos ensaios e seus respectivos cálculos. As taxas de aprovação consideram somente os casos executados. Não foi medida cobertura de linhas, e a proporção de requisitos implementados não representa aprovação individual de todos os requisitos.
 
 Quadro 11 - Métricas do protótipo
 
@@ -343,19 +343,19 @@ Quadro 11 - Métricas do protótipo
 | Casos automatizados | 8 + 9 | 17 casos, incluindo um cenário integrado com várias asserções |
 | Implementação funcional | 13 / 16 × 100 | 81,25%; três requisitos de evolução |
 | Viewports sem overflow inicial | 5 / 5 × 100 | 100% das larguras, sem certificar acessibilidade |
-| Compressão do módulo de mapa | (1 − 285,09 / 1.055,26) × 100 | Aproximadamente 72,98% em gzip |
+| Compressão do módulo de mapa | (1 − 294,79 / 1.089,16) × 100 | Aproximadamente 72,93% em gzip |
 
-Fonte: registros de testes, build e inspeção (2026).
+Fonte: cálculos dos autores a partir dos registros em docs/evidencias/ (9 e 11 nov. 2026).
 
-A repetição de 11 de novembro aprovou oito casos de API, sem falhas ou ignorados, e nove de componentes. A integração verificou autorização, revogação, transições, preservação de relatos, privacidade e limite de dia; três testes adicionais verificaram a prévia de coordenadas. Não foram medidos p50, p95 ou capacidade de usuários.
+O registro de entrega de 11 de novembro de 2026 apresenta oito casos de API e nove de componentes aprovados, sem falhas ou ignorados. O cenário integrado verificou autorização, revogação, transições, preservação de relatos, privacidade e limite de dia. Três casos do conjunto de componentes verificaram a prévia de coordenadas. Não foram medidos p50, p95 ou capacidade de usuários.
 
-No build posterior à prévia, MapLibre apresentou 1.055,26 kB (285,09 kB gzip), bootstrap 225,74 kB e painel 19,82 kB. A prévia é carregada sob demanda. O aviso de chunk superior a 500 kB permanece; tamanhos não representam tempo de carregamento em rede real.
+Na evidência administrativa de 9 de novembro, o módulo público com mapa apresentou 1.089,16 kB (294,79 kB gzip), o bootstrap 225,66 kB e o painel 18,19 kB. Esses valores descrevem aquela compilação histórica; não são uma medição da versão atual. O aviso de chunk superior a 500 kB foi registrado como limitação. Os tamanhos dos arquivos não foram utilizados como medida de tempo de carregamento em rede real.
 
 ### 5.3 Discussão
 
 Os resultados sustentam a integração dos fluxos exercitados e a separação entre ocorrência e relato. Contas individuais atribuem decisões, e o histórico mantém resoluções e reaberturas. A revisão de código corrigiu retenção de dados da sessão anterior na interface, configuração de cookie e identificação do alvo na auditoria.
 
-Persistem quotas em memória, mídia local, ausência de MFA, idempotência e mesclagem, dependência de tiles e inspeção incompleta de acessibilidade. HMAC é pseudonimização e permite correlação; uma fonte técnica não equivale a uma pessoa. Não há evidência de adoção comunitária, impacto ambiental ou integração com atendimento institucional.
+A avaliação identificou quotas em memória, armazenamento local de imagens, ausência de MFA, idempotência e mesclagem, dependência de tiles e inspeção incompleta de acessibilidade. Na implementação, o HMAC permite correlacionar relatos de uma mesma fonte técnica, sem expor o IP bruto nas consultas. Esse mecanismo não foi avaliado como anonimização irreversível. O compartilhamento de IP também limita a identificação unívoca de usuários (Ford et al., 2011, seções 12 e 13). Como os ensaios utilizaram dados fictícios e ambiente local, os resultados não permitem concluir adoção comunitária, impacto ambiental ou integração institucional.
 
 ### 5.4 Proposta comercial acadêmica
 
@@ -370,9 +370,9 @@ Quadro 12 - Estimativa de serviços para piloto
 | Documentação e validação | 12 h | 12 × R$ 50,00 | R$ 600,00 |
 | Total | 80 h | 80 × R$ 50,00 | R$ 4.000,00 |
 
-Fonte: estimativa acadêmica dos autores (2026), não cotada.
+Fonte: cálculo e premissas hipotéticas dos autores (2026); valores não cotados.
 
-Como cenário mensal, R$ 100,00 de infraestrutura mais 12 horas de apoio/moderação a R$ 50,00 resultam em R$ 700,00. Não estão incluídos tributos, atendimento 24 horas, parecer jurídico, hardware ou garantia de disponibilidade. Um preço real dependeria de escopo, volumetria, licenças e cotações atuais. Antes de oferecer o serviço, seriam necessários HTTPS, política de moderação/privacidade, backup restaurável e responsáveis definidos.
+Como cenário hipotético dos autores, R$ 100,00 de infraestrutura mais 12 horas a R$ 50,00 resultam em R$ 700,00 mensais; esses valores são premissas do exercício, sem pesquisa de mercado. Excluem-se tributos, atendimento contínuo, parecer jurídico, hardware e garantia de disponibilidade. A estimativa deve ser revista antes de qualquer contratação. Para uma operação futura, os autores propõem tratar as limitações técnicas registradas e as responsabilidades de proteção de dados (Brasil, 2018).
 
 ## Considerações finais
 
@@ -380,33 +380,45 @@ O projeto entregou consulta geográfica, relatos e confirmação, acrescidos de 
 
 A questão de projeto foi respondida no recorte técnico: os cenários executados demonstraram coexistência de consulta espacial, contribuição sem cadastro público e moderação rastreável. A conclusão é limitada aos dados fictícios e à configuração dos testes. Não se conclui impacto ambiental, desempenho em produção ou comprovação oficial dos relatos.
 
-Os desafios envolveram conciliar contribuição simplificada e prevenção de abuso, proteger fontes e manter decisões reversíveis. A evolução deve priorizar políticas operacionais, MFA, idempotência, quotas distribuídas, armazenamento de objetos e ensaios de segurança, carga e acessibilidade. O aceite acadêmico e os ajustes finais competem ao orientador e à banca.
+Os desafios de desenvolvimento envolveram conciliar contribuição simplificada, prevenção de abuso e decisões reversíveis. A partir das limitações discutidas na Seção 5.3, propõe-se ampliar os controles de autenticação, a persistência de quotas, o armazenamento de imagens e os ensaios de segurança, carga e acessibilidade. Essas melhorias constituem trabalhos futuros e não resultados desta avaliação.
 
 ## Referências
 
-BRASIL. Lei nº 13.709, de 14 de agosto de 2018. Lei Geral de Proteção de Dados Pessoais. Brasília, DF: Presidência da República, 2018. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm. Acesso em: 11 nov. 2026.
+BRASIL. Lei nº 13.709, de 14 de agosto de 2018. **Lei Geral de Proteção de Dados Pessoais**. Brasília, DF: Presidência da República, 2018. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm. Acesso em: 11 nov. 2026.
 
-FATEC FRANCA. Diretrizes para execução de projetos de trabalhos de graduação. Franca: Faculdade de Tecnologia de Franca, 2023. Disponível em: https://site.fatecfranca.edu.br/files/diretrizes2023v6.pdf. Acesso em: 11 nov. 2026.
+FASTIFY. **Fastify documentation**. [S. l.]: Fastify, [s. d.]. Disponível em: https://fastify.dev/. Acesso em: 11 nov. 2026.
 
-FATEC FRANCA. Projeto de software: modelo de Trabalho de Graduação de ADS. Franca: Faculdade de Tecnologia de Franca, 2023. Disponível em: https://site.fatecfranca.edu.br/files/tg-modelo-prjSoftware-ads-v2023ago.docx. Acesso em: 11 nov. 2026.
+FATEC FRANCA. **Diretrizes para execução de projetos de trabalhos de graduação**. Franca: Faculdade de Tecnologia de Franca, 2023a. Disponível em: https://site.fatecfranca.edu.br/files/diretrizes2023v6.pdf. Acesso em: 11 nov. 2026.
 
-FASTIFY. Fastify documentation. [S. l.]: Fastify, [s. d.]. Disponível em: https://fastify.dev/. Acesso em: 11 nov. 2026.
+FATEC FRANCA. **Projeto de software: modelo de Trabalho de Graduação de ADS**. Franca: Faculdade de Tecnologia de Franca, 2023b. Disponível em: https://site.fatecfranca.edu.br/files/tg-modelo-prjSoftware-ads-v2023ago.docx. Acesso em: 11 nov. 2026.
 
-HEVNER, Alan R.; MARCH, Salvatore T.; PARK, Jinsoo; RAM, Sudha. Design science in information systems research. MIS Quarterly, v. 28, n. 1, p. 75–105, 2004. DOI: https://doi.org/10.2307/25148625.
+FORD, Mat; BOUCADAIR, Mohamed; DURAND, Alain; LEVIS, Pierre; ROBERTS, Phil. **Issues with IP address sharing**. [S. l.]: IETF, jun. 2011. RFC 6269. Disponível em: https://www.rfc-editor.org/rfc/rfc6269.html. Acesso em: 16 nov. 2026.
 
-MAPLIBRE. MapLibre GL JS documentation. [S. l.]: MapLibre, [s. d.]. Disponível em: https://maplibre.org/maplibre-gl-js/docs/. Acesso em: 11 nov. 2026.
+GOODCHILD, Michael F. Citizens as sensors: the world of volunteered geography. **GeoJournal**, v. 69, p. 211–221, 2007. DOI: https://doi.org/10.1007/s10708-007-9111-y. Acesso em: 16 nov. 2026.
 
-NASA. NASA systems engineering handbook: Appendix C: how to write a good requirement. Washington, DC: NASA, 2016. Disponível em: https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/. Acesso em: 11 nov. 2026.
+HEVNER, Alan R.; MARCH, Salvatore T.; PARK, Jinsoo; RAM, Sudha. Design science in information systems research. **MIS Quarterly**, v. 28, n. 1, p. 75–105, 2004. DOI: https://doi.org/10.2307/25148625.
 
-OMG - OBJECT MANAGEMENT GROUP. Business Process Model and Notation: version 2.0.2. Needham: OMG, 2013. Disponível em: https://www.omg.org/spec/BPMN/2.0.2. Acesso em: 11 nov. 2026.
+MAPLIBRE. **MapLibre GL JS documentation**. [S. l.]: MapLibre, [s. d.]. Disponível em: https://maplibre.org/maplibre-gl-js/docs/. Acesso em: 11 nov. 2026.
 
-OMG - OBJECT MANAGEMENT GROUP. Unified Modeling Language: version 2.5.1. Needham: OMG, 2017. Disponível em: https://www.omg.org/spec/UML/2.5.1. Acesso em: 11 nov. 2026.
+NASA. **NASA systems engineering handbook: Appendix C: how to write a good requirement**. Washington, DC: NASA, 2016. Disponível em: https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/. Acesso em: 11 nov. 2026.
 
-OWASP FOUNDATION. File upload cheat sheet. [S. l.]: OWASP Foundation, [s. d.]. Disponível em: https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html. Acesso em: 11 nov. 2026.
+NODE.JS. **Crypto: Node.js 22 documentation**. [S. l.]: Node.js, [s. d.]. Disponível em: https://nodejs.org/docs/latest-v22.x/api/crypto.html. Acesso em: 16 nov. 2026.
 
-POSTGIS. PostGIS documentation. [S. l.]: PostGIS, [s. d.]. Disponível em: https://postgis.net/documentation/. Acesso em: 11 nov. 2026.
+OMG - OBJECT MANAGEMENT GROUP. **Business Process Model and Notation: version 2.0.2**. Needham: OMG, 2013. Disponível em: https://www.omg.org/spec/BPMN/2.0.2. Acesso em: 11 nov. 2026.
 
-REACT. React documentation. [S. l.]: React, [s. d.]. Disponível em: https://react.dev/. Acesso em: 11 nov. 2026.
+OMG - OBJECT MANAGEMENT GROUP. **Unified Modeling Language: version 2.5.1**. Needham: OMG, 2017. Disponível em: https://www.omg.org/spec/UML/2.5.1. Acesso em: 11 nov. 2026.
+
+OWASP FOUNDATION. **File upload cheat sheet**. [S. l.]: OWASP Foundation, [s. d.a]. Disponível em: https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html. Acesso em: 11 nov. 2026.
+
+OWASP FOUNDATION. **Session management cheat sheet**. [S. l.]: OWASP Foundation, [s. d.b]. Disponível em: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html. Acesso em: 16 nov. 2026.
+
+POSTGIS. **PostGIS documentation**. [S. l.]: PostGIS, [s. d.]. Disponível em: https://postgis.net/documentation/. Acesso em: 11 nov. 2026.
+
+POSTGRESQL. **PostgreSQL 16 documentation: transactions**. [S. l.]: PostgreSQL Global Development Group, [s. d.]. Disponível em: https://www.postgresql.org/docs/16/tutorial-transactions.html. Acesso em: 16 nov. 2026.
+
+REACT. **React documentation**. [S. l.]: React, [s. d.]. Disponível em: https://react.dev/. Acesso em: 11 nov. 2026.
+
+TYPESCRIPT. **The TypeScript handbook**. [S. l.]: TypeScript, [s. d.]. Disponível em: https://www.typescriptlang.org/docs/handbook/intro.html. Acesso em: 16 nov. 2026.
 
 ## Apêndice A - Decisões documentais de requisitos
 
@@ -424,4 +436,4 @@ Quadro 13 - Registro de decisões
 | Expor IP/HMAC ao painel? | Não; apenas agregados |
 | Como criar administradores? | Primeiro owner por CLI; demais pelo owner; troca de senha temporária |
 
-Fonte: especificação e registros de implementação (2026).
+Fonte: elaboração dos autores (2026).
